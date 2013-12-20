@@ -566,7 +566,7 @@ tagCompare(const void* a, const void* b)
 }
 
 static int
-tagNameCompare(const void* a, const void* b)
+tagNameCompare(const void* context, const void* a, const void* b)
 {
 	const TIFFFieldInfo* ta = *(const TIFFFieldInfo**) a;
 	const TIFFFieldInfo* tb = *(const TIFFFieldInfo**) b;
@@ -792,11 +792,12 @@ _TIFFFindFieldInfoByName(TIFF* tif, const char *field_name, TIFFDataType dt)
         key.field_name = (char *)field_name;
         key.field_type = dt;
 
-        ret = (const TIFFFieldInfo **) lfind(&pkey,
+        ret = (const TIFFFieldInfo **) _lfind_s(&pkey,
 					     tif->tif_fieldinfo, 
 					     &tif->tif_nfields,
 					     sizeof(TIFFFieldInfo *),
-					     tagNameCompare);
+					     tagNameCompare,
+						 0);
 	return tif->tif_foundfield = (ret ? *ret : NULL);
 }
 

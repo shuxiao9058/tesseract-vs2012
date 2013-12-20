@@ -441,7 +441,7 @@ pixSauvolaBinarizeTiled(PIX       *pixs,
                         PIX      **ppixd)
 {
 l_int32     i, j, w, h, xrat, yrat;
-PIX        *pixth, *pixd, *tileth, *tiled, *pixt;
+PIX        *pixth = NULL, *pixd = NULL, *tileth = NULL, *tiled = NULL, *pixt;
 PIX       **ptileth, **ptiled;
 PIXTILING  *pt;
 

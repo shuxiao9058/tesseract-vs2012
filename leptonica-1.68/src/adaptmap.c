@@ -1218,7 +1218,7 @@ pixGetBackgroundRGBMapMorph(PIX     *pixs,
 {
 l_int32    nx, ny, empty, fgpixels;
 l_float32  scale;
-PIX       *pixm, *pixmr, *pixmg, *pixmb, *pixt1, *pixt2, *pixt3, *pixims;
+PIX       *pixm, *pixmr, *pixmg, *pixmb, *pixt1, *pixt2, *pixt3, *pixims = NULL;
 
     PROCNAME("pixGetBackgroundRGBMapMorph");
 

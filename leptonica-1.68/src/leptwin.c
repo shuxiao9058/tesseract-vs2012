@@ -24,7 +24,7 @@
  *      HBITMAP    pixGetWindowsHBITMAP(PIX *pix)
  */
 
-#ifdef _WIN32
+#ifdef _WIN32_DESKTOP
 #include <stdlib.h>
 #include <string.h>
 #include "allheaders.h"
@@ -350,4 +350,4 @@ PIXCMAP   *cmap;
     return hBitmap;
 }
 
-#endif   /* _WIN32 */
+#endif   /* _WIN32_DESKTOP */

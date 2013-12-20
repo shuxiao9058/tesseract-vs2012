@@ -55,25 +55,25 @@
 static tsize_t
 _tiffReadProc(thandle_t fd, tdata_t buf, tsize_t size)
 {
-	return ((tsize_t) read((int) fd, buf, (size_t) size));
+	return ((tsize_t) _read((int) fd, buf, (size_t) size));
 }
 
 static tsize_t
 _tiffWriteProc(thandle_t fd, tdata_t buf, tsize_t size)
 {
-	return ((tsize_t) write((int) fd, buf, (size_t) size));
+	return ((tsize_t) _write((int) fd, buf, (size_t) size));
 }
 
 static toff_t
 _tiffSeekProc(thandle_t fd, toff_t off, int whence)
 {
-	return ((toff_t) lseek((int) fd, (off_t) off, whence));
+	return ((toff_t) _lseek((int) fd, (off_t) off, whence));
 }
 
 static int
 _tiffCloseProc(thandle_t fd)
 {
-	return (close((int) fd));
+	return (_close((int) fd));
 }
 
 
@@ -166,9 +166,9 @@ TIFFOpen(const char* name, const char* mode)
 #endif        
         
 #ifdef _AM29K
-	fd = open(name, m);
+	fd = _open(name, m);
 #else
-	fd = open(name, m, 0666);
+	fd = _open(name, m, 0666);
 #endif
 	if (fd < 0) {
 		TIFFErrorExt(0, module, "%s: Cannot open", name);
@@ -177,7 +177,7 @@ TIFFOpen(const char* name, const char* mode)
 
 	tif = TIFFFdOpen((int)fd, name, mode);
 	if(!tif)
-		close(fd);
+		_close(fd);
 	return tif;
 }
 
@@ -230,7 +230,7 @@ TIFFOpenW(const wchar_t* name, const char* mode)
 	_TIFFfree(mbname);
 	
 	if(!tif)
-		close(fd);
+		_close(fd);
 	return tif;
 }
 #endif

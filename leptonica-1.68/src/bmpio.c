@@ -62,7 +62,7 @@ l_int16    bfType, bfSize, bfFill1, bfReserved1, bfReserved2;
 l_int16    offset, bfFill2, biPlanes, depth, d;
 l_int32    biSize, width, height, xres, yres, compression, ignore;
 l_int32    imagebytes, biClrUsed, biClrImportant;
-l_uint8   *colormapBuf;
+l_uint8   *colormapBuf = NULL;
 l_int32    colormapEntries;
 l_int32    fileBpl, extrabytes, readerror;
 l_int32    pixWpl, pixBpl;
@@ -311,8 +311,8 @@ l_int32     heapcm;  /* extra copy of cta on the heap ? 1 : 0 */
 l_uint8    *data;
 l_uint8     pel[4];
 l_uint32   *line, *pword;
-PIXCMAP    *cmap;
-l_uint8    *cta;          /* address of the bmp color table array */
+PIXCMAP    *cmap = NULL;
+l_uint8    *cta = NULL;          /* address of the bmp color table array */
 l_int32     cmaplen;      /* number of bytes in the bmp colormap */
 l_int32     ncolors, val, stepsize;
 RGBA_QUAD  *pquad;
