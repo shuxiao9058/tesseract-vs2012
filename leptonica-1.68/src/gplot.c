@@ -356,6 +356,8 @@ l_int32  ignore;
     if (!gplot)
         return ERROR_INT("gplot not defined", procName, 1);
 
+#ifndef _WRT
+	/* Invoking other programs is not supported on Windows Runtime (phone) */
     gplotGenCommandFile(gplot);
     gplotGenDataFiles(gplot);
 
@@ -373,6 +375,7 @@ l_int32  ignore;
                "wgnuplot -persist %s", gplot->cmdname);
 #endif  /* _WIN32 */
     ignore = system(buf);
+#endif
     return 0;
 }
 

@@ -799,8 +799,7 @@ char            fullpath[_MAX_PATH];
     }
     ignore = system(buffer);
 
-#else  /* _WIN32 */
-
+elif !defined _WRT   /* _WIN32 desktop (not Windows Runtime) */
         /* Windows: L_DISPLAY_WITH_IV */
     pathname = genPathname(tempname, NULL);
     _fullpath(fullpath, pathname, sizeof(fullpath));
@@ -811,7 +810,9 @@ char            fullpath[_MAX_PATH];
     else
         snprintf(buffer, L_BUF_SIZE, "i_view32.exe \"%s\" /pos=(%d,%d)",
                  fullpath, x, y);
+
     ignore = system(buffer);
+
     FREE(pathname);
 
 #endif  /* _WIN32 */
