@@ -15,19 +15,37 @@
 		<Template Include="$(SourceDir)\AssemblyVersionInfo.template.cs" />
 		
 		<Flavor Include="$(SourceDir)\Tesseract.sln">
-			<Configuration>Debug</Configuration>
+			<Configuration>DLL_Debug</Configuration>
 			<Platform>Win32</Platform>
 		</Flavor>
 		<Flavor Include="$(SourceDir)\Tesseract.sln">
-			<Configuration>Release</Configuration>
+			<Configuration>DLL_Release</Configuration>
 			<Platform>Win32</Platform>
 		</Flavor>
 		<Flavor Include="$(SourceDir)\Tesseract.sln">
-			<Configuration>Debug</Configuration>
+			<Configuration>DLL_Debug</Configuration>
 			<Platform>x64</Platform>
 		</Flavor>
 		<Flavor Include="$(SourceDir)\Tesseract.sln">
-			<Configuration>Release</Configuration>
+			<Configuration>DLL_Release</Configuration>
+			<Platform>x64</Platform>
+		</Flavor>
+		
+		
+		<Flavor Include="$(SourceDir)\Tesseract.sln">
+			<Configuration>LIB_Debug</Configuration>
+			<Platform>Win32</Platform>
+		</Flavor>
+		<Flavor Include="$(SourceDir)\Tesseract.sln">
+			<Configuration>LIB_Release</Configuration>
+			<Platform>Win32</Platform>
+		</Flavor>
+		<Flavor Include="$(SourceDir)\Tesseract.sln">
+			<Configuration>LIB_Debug</Configuration>
+			<Platform>x64</Platform>
+		</Flavor>
+		<Flavor Include="$(SourceDir)\Tesseract.sln">
+			<Configuration>LIB_Release</Configuration>
 			<Platform>x64</Platform>
 		</Flavor>
 	
