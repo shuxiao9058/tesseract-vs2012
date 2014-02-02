@@ -541,9 +541,6 @@
     <ClInclude Include="include\environ.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\freetype.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\gplot.h">
       <Filter>Header Files</Filter>
     </ClInclude>

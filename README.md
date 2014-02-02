@@ -1,11 +1,15 @@
 tesseract-vs2012
 ================
 
-Tesseract OCR engine and dependencies with VS 2012 support, both 64 and 32 bit.
+Tesseract OCR engine dependencies with VS 2013 support, both 64 and 32 bit.
 
-This repository contains the from Google's [Tesseract OCR project](https://code.google.com/p/tesseract-ocr/) for tesseract 3.02 and leptonica 1.68, along with dependencies for everything but GIF support.
+This repository contains the dependencies for Google's [Tesseract OCR project](https://code.google.com/p/tesseract-ocr/) for tesseract 3.03 and leptonica 1.70, along with dependencies for everything but GIF support.
 
 What is not included is the VS 2008 build system.
 
+### Build Instructions
 
-Currently only liblept168.dll, libtesseract302.dll and tesseract.exe are built. You'll need to use the original distribution for training purposes.
+1. Open VS 2013 Developer Command Prompt and change the directory to this repository.
+2. Execute the following command ``msbuild build.proj``
+
+The build libraries and headers will be copied to ``~\release`` when done.
