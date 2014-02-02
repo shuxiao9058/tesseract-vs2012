@@ -7,6 +7,7 @@
 		<ZLibDir>$(MSBuildProjectDirectory)\zlib-128</ZLibDir>
 		<LibJpegDir>$(MSBuildProjectDirectory)\libjpeg-8c</LibJpegDir>
 		<LibPngDir>$(MSBuildProjectDirectory)\libpng-143</LibPngDir>
+		<LibGifDir>$(MSBuildProjectDirectory)\giflib</LibGifDir>
 		<LibTiffDir>$(MSBuildProjectDirectory)\libtiff-394\libtiff</LibTiffDir>	
 		<LibLeptDir>$(MSBuildProjectDirectory)\liblept-170</LibLeptDir>
 	</PropertyGroup>
@@ -46,6 +47,8 @@
 		<Header Include="$(LibTiffDir)\include\tiffconf.h" />
 		<Header Include="$(LibTiffDir)\include\tiffio.h" />
 		<Header Include="$(LibTiffDir)\include\tiffvers.h" />
+		
+		<Header Include="$(LibGifDir)\include\gif_lib.h" />
 	
 		<LeptHeader Include="$(LibLeptDir)\include\*.h" />
 	</ItemGroup>

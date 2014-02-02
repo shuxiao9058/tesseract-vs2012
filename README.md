@@ -1,11 +1,9 @@
-tesseract-vs2012
+tesseract-vs2013
 ================
 
 Tesseract OCR engine dependencies with VS 2013 support, both 64 and 32 bit.
 
-This repository contains the dependencies for Google's [Tesseract OCR project](https://code.google.com/p/tesseract-ocr/) for tesseract 3.03 and leptonica 1.70, along with dependencies for everything but GIF support.
-
-What is not included is the VS 2008 build system.
+This repository contains the dependencies for Google's [Tesseract OCR project](https://code.google.com/p/tesseract-ocr/) for tesseract 3.03 and leptonica 1.70, along with dependencies for everything but WEBP support.
 
 ### Build Instructions
 
