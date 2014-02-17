@@ -11,3 +11,22 @@ This repository contains the dependencies for Google's [Tesseract OCR project](h
 2. Execute the following command ``msbuild build.proj``
 
 The build libraries and headers will be copied to ``~\release`` when done.
+
+### Building tesseract
+
+1. Get the tesseract source from [SVN](https://code.google.com/p/tesseract-ocr/source/checkout). For example checkout trun to ``C:\tesseract-build\tesseract``.
+2. Apply the ``vs2013+64bit support.patch`` to the tesseract source (this creates a new VS 2013 proj located at ``~/vs2013``).
+3. Copy the previously built dependencies to ``C:\tesseract-build\``
+4. Open the ``C:\tesseract-build\tesseract\vs2013\tesseract.sln`` solution in VS 2013 and build your desired configuration.
+
+## License
+
+All projects are made available under their original license(s).
+
+* Leptonica - ``~/liblept/leptonica-license.txt``
+* GifLib - ``~/giflib/COPYING``
+* LibJpeg - ``~/libjpeg/README``
+* LibPng - ``~/libpng/LICENSE``
+* libtff - ``~/libtiff/COPYRIGHT``
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
