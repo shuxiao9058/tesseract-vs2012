@@ -11,7 +11,6 @@
  * and license in png.h
  */
 
-#define PNG_NO_EXTERN
 #define PNG_NO_PEDANTIC_WARNINGS
 #include "png.h"
 #include "pngpriv.h"

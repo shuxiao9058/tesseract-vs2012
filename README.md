@@ -15,7 +15,7 @@ The build libraries and headers will be copied to ``~\release`` when done.
 ### Building tesseract
 
 1. Get the tesseract source from [SVN](https://code.google.com/p/tesseract-ocr/source/checkout). For example checkout trunk to ``C:\tesseract-build\tesseract``.
-2. Apply the ``vs2013+64bit support.patch`` to the tesseract source (this creates a new VS 2013 proj located at ``~/vs2013``).
+2. Apply the ``vs2013+64bit_support.patch`` to the tesseract source (this creates a new VS 2013 proj located at ``~/vs2013``).
 3. Copy the previously built dependencies to ``C:\tesseract-build\``
 4. Open the ``C:\tesseract-build\tesseract\vs2013\tesseract.sln`` solution in VS 2013 and build your desired configuration.
 
