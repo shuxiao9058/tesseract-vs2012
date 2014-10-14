@@ -8,9 +8,9 @@ Index: vs2013/include/leptonica_versionnumbers.props
 +  <PropertyGroup Label="UserMacros">
 +    <GIFLIB_VERSION>416</GIFLIB_VERSION>
 +    <LIBJPEG_VERSION>8c</LIBJPEG_VERSION>
-+    <LIBLEPT_VERSION>170</LIBLEPT_VERSION>
-+    <LIBLEPT_VERSION_R>1,70,0,0</LIBLEPT_VERSION_R>
-+    <LIBLEPT_NUMBER>1.70</LIBLEPT_NUMBER>
++    <LIBLEPT_VERSION>171</LIBLEPT_VERSION>
++    <LIBLEPT_VERSION_R>1,71,0,0</LIBLEPT_VERSION_R>
++    <LIBLEPT_NUMBER>1.71</LIBLEPT_NUMBER>
 +    <LIBPNG_VERSION>143</LIBPNG_VERSION>
 +    <LIBTIFF_VERSION>394</LIBTIFF_VERSION>
 +    <ZLIB_VERSION>128</ZLIB_VERSION>
@@ -57,9 +57,9 @@ Index: vs2013/include/tesseract_versionnumbers.props
 +    <Import Project="leptonica_versionnumbers.props" />
 +  </ImportGroup>
 +  <PropertyGroup Label="UserMacros">
-+    <LIBTESS_VERSION>303</LIBTESS_VERSION>
-+    <LIBTESS_VERSION_R>3,3,0,0</LIBTESS_VERSION_R>
-+    <LIBTESS_NUMBER>3.03</LIBTESS_NUMBER>
++    <LIBTESS_VERSION>304</LIBTESS_VERSION>
++    <LIBTESS_VERSION_R>3,4,0,0</LIBTESS_VERSION_R>
++    <LIBTESS_NUMBER>3.04</LIBTESS_NUMBER>
 +  </PropertyGroup>
 +  <PropertyGroup>
 +    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
@@ -127,7 +127,7 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    </ProjectConfiguration>
 +  </ItemGroup>
 +  <PropertyGroup Label="Globals">
-+    <ProjectName>libtesseract303</ProjectName>
++    <ProjectName>libtesseract304</ProjectName>
 +    <ProjectGuid>{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}</ProjectGuid>
 +    <RootNamespace>libtesseract</RootNamespace>
 +  </PropertyGroup>
@@ -934,7 +934,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\cube\char_samp_enum.h" />
 +    <ClInclude Include="..\..\cube\char_samp_set.h" />
 +    <ClInclude Include="..\..\cube\char_set.h" />
-+    <ClInclude Include="..\..\classify\chartoname.h" />
 +    <ClInclude Include="..\..\wordrec\chop.h" />
 +    <ClInclude Include="..\..\wordrec\chopper.h" />
 +    <ClInclude Include="..\..\textord\cjkpitch.h" />
@@ -1155,7 +1154,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\ccutil\unicity_table.h" />
 +    <ClInclude Include="..\..\ccutil\unicodes.h" />
 +    <ClInclude Include="..\..\ccstruct\vecfuncs.h" />
-+    <ClInclude Include="..\port\version.h" />
 +    <ClInclude Include="..\..\ccstruct\werd.h" />
 +    <ClInclude Include="..\..\ccmain\werdit.h" />
 +    <ClInclude Include="..\..\cube\word_altlist.h" />
@@ -1182,7 +1180,7 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\wordrec\params_model.h" />
 +  </ItemGroup>
 +  <ItemGroup>
-+    <ResourceCompile Include="libtesseract303.rc" />
++    <ResourceCompile Include="libtesseract.rc" />
 +  </ItemGroup>
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 +  <ImportGroup Label="ExtensionTargets">
@@ -2090,9 +2088,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    <ClInclude Include="..\..\cube\char_set.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
-+    <ClInclude Include="..\..\classify\chartoname.h">
-+      <Filter>Header Files</Filter>
-+    </ClInclude>
 +    <ClInclude Include="..\..\wordrec\chop.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
@@ -2801,9 +2796,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    <ClInclude Include="..\..\ccstruct\vecfuncs.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
-+    <ClInclude Include="..\port\version.h">
-+      <Filter>Header Files</Filter>
-+    </ClInclude>
 +    <ClInclude Include="..\..\ccstruct\werd.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
@@ -2844,16 +2836,16 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    </Filter>
 +  </ItemGroup>
 +  <ItemGroup>
-+    <ResourceCompile Include="libtesseract303.rc">
++    <ResourceCompile Include="libtesseract.rc">
 +      <Filter>Resource Files</Filter>
 +    </ResourceCompile>
 +  </ItemGroup>
 +</Project>
 \ No newline at end of file
-Index: vs2013/libtesseract/libtesseract303.rc
+Index: vs2013/libtesseract/libtesseract.rc
 ===================================================================
---- vs2013/libtesseract/libtesseract303.rc	(revision 0)
-+++ vs2013/libtesseract/libtesseract303.rc	(working copy)
+--- vs2013/libtesseract/libtesseract.rc	(revision 0)
++++ vs2013/libtesseract/libtesseract.rc	(working copy)
 @@ -0,0 +1,101 @@
 +// Microsoft Visual C++ generated resource script.
 +//
@@ -2910,8 +2902,8 @@ Index: vs2013/libtesseract/libtesseract303.rc
 +//
 +
 +VS_VERSION_INFO VERSIONINFO
-+ FILEVERSION 3,2,3,0
-+ PRODUCTVERSION 3,2,3,0
++ FILEVERSION 3,4,0,0
++ PRODUCTVERSION 3,4,0,0
 + FILEFLAGSMASK 0x17L
 +#ifdef _DEBUG
 + FILEFLAGS 0x1L
@@ -2927,12 +2919,12 @@ Index: vs2013/libtesseract/libtesseract303.rc
 +        BLOCK "040904b0"
 +        BEGIN
 +            VALUE "FileDescription", "Tesseract OCR library"
-+            VALUE "FileVersion", "3, 3, 0, 0"
++            VALUE "FileVersion", "3, 4, 0, 0"
 +            VALUE "InternalName", "libtesseract"
-+            VALUE "LegalCopyright", "Copyright (C) 2012 Google, Inc. Licensed under the Apache License, Version 2.0"
++            VALUE "LegalCopyright", "Copyright (C) 2014 Google, Inc. Licensed under the Apache License, Version 2.0"
 +            VALUE "OriginalFilename", "libtesseract"
 +            VALUE "ProductName", "Tesseract OCR Library"
-+            VALUE "ProductVersion", "3, 3, 0, 0"
++            VALUE "ProductVersion", "3, 4, 0, 0"
 +        END
 +    END
 +    BLOCK "VarFileInfo"
@@ -2963,7 +2955,7 @@ Index: vs2013/libtesseract/resource.h
 @@ -0,0 +1,14 @@
 +//{{NO_DEPENDENCIES}}
 +// Microsoft Visual C++ generated include file.
-+// Used by libtesseract303.rc
++// Used by libtesseract.rc
 +
 +// Next default values for new objects
 +// 
@@ -2975,16 +2967,6 @@ Index: vs2013/libtesseract/resource.h
 +#define _APS_NEXT_SYMED_VALUE           101
 +#endif
 +#endif
-Index: vs2013/libtesseract
-===================================================================
---- vs2013/libtesseract	(revision 0)
-+++ vs2013/libtesseract	(working copy)
-
-Property changes on: vs2013/libtesseract
-___________________________________________________________________
-Added: svn:ignore
-## -0,0 +1 ##
-+libtesseract.vcxproj.user
 Index: vs2013/port/gettimeofday.cpp
 ===================================================================
 --- vs2013/port/gettimeofday.cpp	(revision 0)
@@ -3046,8 +3028,8 @@ Index: vs2013/port/gettimeofday.h
 +//
 +///////////////////////////////////////////////////////////////////////
 +
-+#ifndef VS2008_PORT_GETTIMEOFDAY_H_
-+#define VS2008_PORT_GETTIMEOFDAY_H_
++#ifndef VS2013_PORT_GETTIMEOFDAY_H_
++#define VS2013_PORT_GETTIMEOFDAY_H_
 +
 +#ifdef _WIN32
 +#include          <winsock.h>    // timeval is defined in here.
@@ -3057,7 +3039,7 @@ Index: vs2013/port/gettimeofday.h
 +
 +int gettimeofday(struct timeval * tp, struct timezone * tzp);
 +
-+#endif  // VS2008_PORT_GETTIMEOFDAY_H_
++#endif  // VS2013_PORT_GETTIMEOFDAY_H_
 Index: vs2013/port/mathfix.h
 ===================================================================
 --- vs2013/port/mathfix.h	(revision 0)
@@ -3099,7 +3081,7 @@ Index: vs2013/port/mathfix.h
 +//#define round(x) roundf(x)
 +//inline float roundf(float num) { return num > 0 ? floorf(num + 0.5f) : ceilf(num - 0.5f); }
 +
-+#endif  // VS2008_INCLUDE_MATHFIXT_H_
++#endif  // VS2013_INCLUDE_MATHFIXT_H_
 Index: vs2013/port/strcasestr.cpp
 ===================================================================
 --- vs2013/port/strcasestr.cpp	(revision 0)
@@ -3223,8 +3205,8 @@ Index: vs2013/port/strcasestr.h
 +http://git.enlightenment.org/legacy/evil.git/tree/src/lib/evil_string.h?id=eeaddf80d0d547d4c216974038c0599b34359695
 +*/
 +
-+#ifndef VS2010_PORT_STRCASESTR_H_
-+#define VS2010_PORT_STRCASESTR_H_
++#ifndef VS2013_PORT_STRCASESTR_H_
++#define VS2013_PORT_STRCASESTR_H_
 +/**
 + * @brief Locatea substring into a string, ignoring case.
 + *
@@ -3243,7 +3225,7 @@ Index: vs2013/port/strcasestr.h
 + */
 +char *strcasestr(const char *haystack, const char *needle);
 +
-+#endif  /* VS2010_PORT_STRCASESTR_H_ */
++#endif  /* VS2013_PORT_STRCASESTR_H_ */
 Index: vs2013/port/strtok_r.cpp
 ===================================================================
 --- vs2013/port/strtok_r.cpp	(revision 0)
@@ -3330,42 +3312,12 @@ Index: vs2013/port/strtok_r.h
 +//
 +///////////////////////////////////////////////////////////////////////
 +
-+#ifndef VS2010_PORT_STRTOK_R_H_
-+#define VS2010_PORT_STRTOK_R_H_
++#ifndef VS2013_PORT_STRTOK_R_H_
++#define VS2013_PORT_STRTOK_R_H_
 +
 +char *strtok_r(char *s1, const char *s2, char **lasts);
 +
-+#endif  // VS2010_PORT_STRCASESTR_H_
-Index: vs2013/port/version.h
-===================================================================
---- vs2013/port/version.h	(revision 0)
-+++ vs2013/port/version.h	(working copy)
-@@ -0,0 +1,25 @@
-+///////////////////////////////////////////////////////////////////////
-+// File:        version.h
-+// Description: define version identifier for Windows
-+// Author:      zdenop@gmail.com
-+// Created:     Fri Nov 19 21:05:06 CET 2010
-+//
-+// (C) Copyright 2010, Google Inc.
-+// Licensed under the Apache License, Version 2.0 (the "License");
-+// you may not use this file except in compliance with the License.
-+// You may obtain a copy of the License at
-+// http://www.apache.org/licenses/LICENSE-2.0
-+// Unless required by applicable law or agreed to in writing, software
-+// distributed under the License is distributed on an "AS IS" BASIS,
-+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+// See the License for the specific language governing permissions and
-+// limitations under the License.
-+//
-+///////////////////////////////////////////////////////////////////////
-+
-+#ifndef           VS2008_PORT_VERSION_H_
-+#define           VS2008_PORT_VERSION_H_
-+
-+#define VERSION "3.03"
-+
-+#endif  // VS2008_PORT_VERSION_H_
++#endif  // VS2013_PORT_STRCASESTR_H_
 Index: vs2013/tesseract/resource.h
 ===================================================================
 --- vs2013/tesseract/resource.h	(revision 0)
@@ -3445,8 +3397,8 @@ Index: vs2013/tesseract/tesseract.rc
 +//
 +
 +VS_VERSION_INFO VERSIONINFO
-+ FILEVERSION 3,3,0,0
-+ PRODUCTVERSION 3,3,0,0
++ FILEVERSION 3,4,0,0
++ PRODUCTVERSION 3,4,0,0
 + FILEFLAGSMASK 0x17L
 +#ifdef _DEBUG
 + FILEFLAGS 0x1L
@@ -3462,12 +3414,12 @@ Index: vs2013/tesseract/tesseract.rc
 +        BLOCK "040904b0"
 +        BEGIN
 +            VALUE "FileDescription", "Tesseract command-line OCR engine"
-+            VALUE "FileVersion", "3,3,0,0"
++            VALUE "FileVersion", "3,4,0,0"
 +            VALUE "InternalName", "tesseract"
-+            VALUE "LegalCopyright", "Copyright (C) 2013 Google, Inc. Licensed under the Apache License, Version 2.0"
++            VALUE "LegalCopyright", "Copyright (C) 2014 Google, Inc. Licensed under the Apache License, Version 2.0"
 +            VALUE "OriginalFilename", "tesseract.exe"
 +            VALUE "ProductName", "Tesseract-OCR"
-+            VALUE "ProductVersion", "3.03"
++            VALUE "ProductVersion", "3.04"
 +        END
 +    END
 +    BLOCK "VarFileInfo"
@@ -4021,7 +3973,7 @@ Index: vs2013/tesseract/tesseract.vcxproj
 +      <AdditionalDependencies>ws2_32.lib;user32.lib;liblept$(LIBLEPT_VERSION)d.lib</AdditionalDependencies>
 +      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
 +      <Version>$(LIBLEPT_NUMBER)</Version>
-+      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\..\..\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <SubSystem>Console</SubSystem>
 +      <TargetMachine>MachineX86</TargetMachine>
@@ -4057,7 +4009,7 @@ Index: vs2013/tesseract/tesseract.vcxproj
 +      <AdditionalDependencies>ws2_32.lib;user32.lib;liblept$(LIBLEPT_VERSION)d.lib</AdditionalDependencies>
 +      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
 +      <Version>$(LIBLEPT_NUMBER)</Version>
-+      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\..\..\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <SubSystem>Console</SubSystem>
 +    </Link>
@@ -4130,7 +4082,7 @@ Index: vs2013/tesseract.sln
 +# Visual Studio Express 2013 for Windows Desktop
 +VisualStudioVersion = 12.0.21005.1
 +MinimumVisualStudioVersion = 10.0.40219.1
-+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtesseract303", "libtesseract\libtesseract.vcxproj", "{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}"
++Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtesseract304", "libtesseract\libtesseract.vcxproj", "{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}"
 +EndProject
 +Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tesseract", "tesseract\tesseract.vcxproj", "{C76996CB-C4CB-4D89-9F67-F605DF129618}"
 +EndProject
@@ -4193,22 +4145,6 @@ Index: vs2013/tesseract.sln
 +		HideSolutionNode = FALSE
 +	EndGlobalSection
 +EndGlobal
-Index: vs2013
-===================================================================
---- vs2013	(revision 0)
-+++ vs2013	(working copy)
-
-Property changes on: vs2013
-___________________________________________________________________
-Added: svn:ignore
-## -0,0 +1,3 ##
-+*.opensdf
-+*.sdf
-+*.suo
-Added: svn:global-ignores
-## -0,0 +1,2 ##
-+bin
-+obj
 Index: vs2013/include/leptonica_versionnumbers.props
 ===================================================================
 --- vs2013/include/leptonica_versionnumbers.props	(revision 0)
@@ -4219,9 +4155,9 @@ Index: vs2013/include/leptonica_versionnumbers.props
 +  <PropertyGroup Label="UserMacros">
 +    <GIFLIB_VERSION>416</GIFLIB_VERSION>
 +    <LIBJPEG_VERSION>8c</LIBJPEG_VERSION>
-+    <LIBLEPT_VERSION>170</LIBLEPT_VERSION>
-+    <LIBLEPT_VERSION_R>1,70,0,0</LIBLEPT_VERSION_R>
-+    <LIBLEPT_NUMBER>1.70</LIBLEPT_NUMBER>
++    <LIBLEPT_VERSION>171</LIBLEPT_VERSION>
++    <LIBLEPT_VERSION_R>1,71,0,0</LIBLEPT_VERSION_R>
++    <LIBLEPT_NUMBER>1.71</LIBLEPT_NUMBER>
 +    <LIBPNG_VERSION>143</LIBPNG_VERSION>
 +    <LIBTIFF_VERSION>394</LIBTIFF_VERSION>
 +    <ZLIB_VERSION>128</ZLIB_VERSION>
@@ -4268,9 +4204,9 @@ Index: vs2013/include/tesseract_versionnumbers.props
 +    <Import Project="leptonica_versionnumbers.props" />
 +  </ImportGroup>
 +  <PropertyGroup Label="UserMacros">
-+    <LIBTESS_VERSION>303</LIBTESS_VERSION>
-+    <LIBTESS_VERSION_R>3,3,0,0</LIBTESS_VERSION_R>
-+    <LIBTESS_NUMBER>3.03</LIBTESS_NUMBER>
++    <LIBTESS_VERSION>304</LIBTESS_VERSION>
++    <LIBTESS_VERSION_R>3,4,0,0</LIBTESS_VERSION_R>
++    <LIBTESS_NUMBER>3.04</LIBTESS_NUMBER>
 +  </PropertyGroup>
 +  <PropertyGroup>
 +    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
@@ -4298,9 +4234,9 @@ Index: vs2013/include/leptonica_versionnumbers.props
 +  <PropertyGroup Label="UserMacros">
 +    <GIFLIB_VERSION>416</GIFLIB_VERSION>
 +    <LIBJPEG_VERSION>8c</LIBJPEG_VERSION>
-+    <LIBLEPT_VERSION>170</LIBLEPT_VERSION>
-+    <LIBLEPT_VERSION_R>1,70,0,0</LIBLEPT_VERSION_R>
-+    <LIBLEPT_NUMBER>1.70</LIBLEPT_NUMBER>
++    <LIBLEPT_VERSION>171</LIBLEPT_VERSION>
++    <LIBLEPT_VERSION_R>1,71,0,0</LIBLEPT_VERSION_R>
++    <LIBLEPT_NUMBER>1.71</LIBLEPT_NUMBER>
 +    <LIBPNG_VERSION>143</LIBPNG_VERSION>
 +    <LIBTIFF_VERSION>394</LIBTIFF_VERSION>
 +    <ZLIB_VERSION>128</ZLIB_VERSION>
@@ -4347,9 +4283,9 @@ Index: vs2013/include/tesseract_versionnumbers.props
 +    <Import Project="leptonica_versionnumbers.props" />
 +  </ImportGroup>
 +  <PropertyGroup Label="UserMacros">
-+    <LIBTESS_VERSION>303</LIBTESS_VERSION>
-+    <LIBTESS_VERSION_R>3,3,0,0</LIBTESS_VERSION_R>
-+    <LIBTESS_NUMBER>3.03</LIBTESS_NUMBER>
++    <LIBTESS_VERSION>304</LIBTESS_VERSION>
++    <LIBTESS_VERSION_R>3,4,0,0</LIBTESS_VERSION_R>
++    <LIBTESS_NUMBER>3.04</LIBTESS_NUMBER>
 +  </PropertyGroup>
 +  <PropertyGroup>
 +    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
@@ -4417,7 +4353,7 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    </ProjectConfiguration>
 +  </ItemGroup>
 +  <PropertyGroup Label="Globals">
-+    <ProjectName>libtesseract303</ProjectName>
++    <ProjectName>libtesseract304</ProjectName>
 +    <ProjectGuid>{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}</ProjectGuid>
 +    <RootNamespace>libtesseract</RootNamespace>
 +  </PropertyGroup>
@@ -5224,7 +5160,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\cube\char_samp_enum.h" />
 +    <ClInclude Include="..\..\cube\char_samp_set.h" />
 +    <ClInclude Include="..\..\cube\char_set.h" />
-+    <ClInclude Include="..\..\classify\chartoname.h" />
 +    <ClInclude Include="..\..\wordrec\chop.h" />
 +    <ClInclude Include="..\..\wordrec\chopper.h" />
 +    <ClInclude Include="..\..\textord\cjkpitch.h" />
@@ -5445,7 +5380,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\ccutil\unicity_table.h" />
 +    <ClInclude Include="..\..\ccutil\unicodes.h" />
 +    <ClInclude Include="..\..\ccstruct\vecfuncs.h" />
-+    <ClInclude Include="..\port\version.h" />
 +    <ClInclude Include="..\..\ccstruct\werd.h" />
 +    <ClInclude Include="..\..\ccmain\werdit.h" />
 +    <ClInclude Include="..\..\cube\word_altlist.h" />
@@ -5472,7 +5406,7 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\wordrec\params_model.h" />
 +  </ItemGroup>
 +  <ItemGroup>
-+    <ResourceCompile Include="libtesseract303.rc" />
++    <ResourceCompile Include="libtesseract.rc" />
 +  </ItemGroup>
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 +  <ImportGroup Label="ExtensionTargets">
@@ -6380,9 +6314,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    <ClInclude Include="..\..\cube\char_set.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
-+    <ClInclude Include="..\..\classify\chartoname.h">
-+      <Filter>Header Files</Filter>
-+    </ClInclude>
 +    <ClInclude Include="..\..\wordrec\chop.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
@@ -7091,9 +7022,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    <ClInclude Include="..\..\ccstruct\vecfuncs.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
-+    <ClInclude Include="..\port\version.h">
-+      <Filter>Header Files</Filter>
-+    </ClInclude>
 +    <ClInclude Include="..\..\ccstruct\werd.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
@@ -7134,16 +7062,16 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    </Filter>
 +  </ItemGroup>
 +  <ItemGroup>
-+    <ResourceCompile Include="libtesseract303.rc">
++    <ResourceCompile Include="libtesseract.rc">
 +      <Filter>Resource Files</Filter>
 +    </ResourceCompile>
 +  </ItemGroup>
 +</Project>
 \ No newline at end of file
-Index: vs2013/libtesseract/libtesseract303.rc
+Index: vs2013/libtesseract/libtesseract.rc
 ===================================================================
---- vs2013/libtesseract/libtesseract303.rc	(revision 0)
-+++ vs2013/libtesseract/libtesseract303.rc	(working copy)
+--- vs2013/libtesseract/libtesseract.rc	(revision 0)
++++ vs2013/libtesseract/libtesseract.rc	(working copy)
 @@ -0,0 +1,101 @@
 +// Microsoft Visual C++ generated resource script.
 +//
@@ -7200,8 +7128,8 @@ Index: vs2013/libtesseract/libtesseract303.rc
 +//
 +
 +VS_VERSION_INFO VERSIONINFO
-+ FILEVERSION 3,2,3,0
-+ PRODUCTVERSION 3,2,3,0
++ FILEVERSION 3,4,0,0
++ PRODUCTVERSION 3,4,0,0
 + FILEFLAGSMASK 0x17L
 +#ifdef _DEBUG
 + FILEFLAGS 0x1L
@@ -7217,12 +7145,12 @@ Index: vs2013/libtesseract/libtesseract303.rc
 +        BLOCK "040904b0"
 +        BEGIN
 +            VALUE "FileDescription", "Tesseract OCR library"
-+            VALUE "FileVersion", "3, 3, 0, 0"
++            VALUE "FileVersion", "3, 4, 0, 0"
 +            VALUE "InternalName", "libtesseract"
-+            VALUE "LegalCopyright", "Copyright (C) 2012 Google, Inc. Licensed under the Apache License, Version 2.0"
++            VALUE "LegalCopyright", "Copyright (C) 2014 Google, Inc. Licensed under the Apache License, Version 2.0"
 +            VALUE "OriginalFilename", "libtesseract"
 +            VALUE "ProductName", "Tesseract OCR Library"
-+            VALUE "ProductVersion", "3, 3, 0, 0"
++            VALUE "ProductVersion", "3, 4, 0, 0"
 +        END
 +    END
 +    BLOCK "VarFileInfo"
@@ -7253,7 +7181,7 @@ Index: vs2013/libtesseract/resource.h
 @@ -0,0 +1,14 @@
 +//{{NO_DEPENDENCIES}}
 +// Microsoft Visual C++ generated include file.
-+// Used by libtesseract303.rc
++// Used by libtesseract.rc
 +
 +// Next default values for new objects
 +// 
@@ -7265,16 +7193,6 @@ Index: vs2013/libtesseract/resource.h
 +#define _APS_NEXT_SYMED_VALUE           101
 +#endif
 +#endif
-Index: vs2013/libtesseract
-===================================================================
---- vs2013/libtesseract	(revision 0)
-+++ vs2013/libtesseract	(working copy)
-
-Property changes on: vs2013/libtesseract
-___________________________________________________________________
-Added: svn:ignore
-## -0,0 +1 ##
-+libtesseract.vcxproj.user
 Index: vs2013/libtesseract/libtesseract.vcxproj
 ===================================================================
 --- vs2013/libtesseract/libtesseract.vcxproj	(revision 0)
@@ -7325,7 +7243,7 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    </ProjectConfiguration>
 +  </ItemGroup>
 +  <PropertyGroup Label="Globals">
-+    <ProjectName>libtesseract303</ProjectName>
++    <ProjectName>libtesseract304</ProjectName>
 +    <ProjectGuid>{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}</ProjectGuid>
 +    <RootNamespace>libtesseract</RootNamespace>
 +  </PropertyGroup>
@@ -8132,7 +8050,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\cube\char_samp_enum.h" />
 +    <ClInclude Include="..\..\cube\char_samp_set.h" />
 +    <ClInclude Include="..\..\cube\char_set.h" />
-+    <ClInclude Include="..\..\classify\chartoname.h" />
 +    <ClInclude Include="..\..\wordrec\chop.h" />
 +    <ClInclude Include="..\..\wordrec\chopper.h" />
 +    <ClInclude Include="..\..\textord\cjkpitch.h" />
@@ -8353,7 +8270,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\ccutil\unicity_table.h" />
 +    <ClInclude Include="..\..\ccutil\unicodes.h" />
 +    <ClInclude Include="..\..\ccstruct\vecfuncs.h" />
-+    <ClInclude Include="..\port\version.h" />
 +    <ClInclude Include="..\..\ccstruct\werd.h" />
 +    <ClInclude Include="..\..\ccmain\werdit.h" />
 +    <ClInclude Include="..\..\cube\word_altlist.h" />
@@ -8380,7 +8296,7 @@ Index: vs2013/libtesseract/libtesseract.vcxproj
 +    <ClInclude Include="..\..\wordrec\params_model.h" />
 +  </ItemGroup>
 +  <ItemGroup>
-+    <ResourceCompile Include="libtesseract303.rc" />
++    <ResourceCompile Include="libtesseract.rc" />
 +  </ItemGroup>
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 +  <ImportGroup Label="ExtensionTargets">
@@ -9288,9 +9204,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    <ClInclude Include="..\..\cube\char_set.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
-+    <ClInclude Include="..\..\classify\chartoname.h">
-+      <Filter>Header Files</Filter>
-+    </ClInclude>
 +    <ClInclude Include="..\..\wordrec\chop.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
@@ -9999,9 +9912,6 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    <ClInclude Include="..\..\ccstruct\vecfuncs.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
-+    <ClInclude Include="..\port\version.h">
-+      <Filter>Header Files</Filter>
-+    </ClInclude>
 +    <ClInclude Include="..\..\ccstruct\werd.h">
 +      <Filter>Header Files</Filter>
 +    </ClInclude>
@@ -10042,16 +9952,16 @@ Index: vs2013/libtesseract/libtesseract.vcxproj.filters
 +    </Filter>
 +  </ItemGroup>
 +  <ItemGroup>
-+    <ResourceCompile Include="libtesseract303.rc">
++    <ResourceCompile Include="libtesseract.rc">
 +      <Filter>Resource Files</Filter>
 +    </ResourceCompile>
 +  </ItemGroup>
 +</Project>
 \ No newline at end of file
-Index: vs2013/libtesseract/libtesseract303.rc
+Index: vs2013/libtesseract/libtesseract.rc
 ===================================================================
---- vs2013/libtesseract/libtesseract303.rc	(revision 0)
-+++ vs2013/libtesseract/libtesseract303.rc	(working copy)
+--- vs2013/libtesseract/libtesseract.rc	(revision 0)
++++ vs2013/libtesseract/libtesseract.rc	(working copy)
 @@ -0,0 +1,101 @@
 +// Microsoft Visual C++ generated resource script.
 +//
@@ -10108,8 +10018,8 @@ Index: vs2013/libtesseract/libtesseract303.rc
 +//
 +
 +VS_VERSION_INFO VERSIONINFO
-+ FILEVERSION 3,2,3,0
-+ PRODUCTVERSION 3,2,3,0
++ FILEVERSION 3,4,0,0
++ PRODUCTVERSION 3,4,0,0
 + FILEFLAGSMASK 0x17L
 +#ifdef _DEBUG
 + FILEFLAGS 0x1L
@@ -10125,12 +10035,12 @@ Index: vs2013/libtesseract/libtesseract303.rc
 +        BLOCK "040904b0"
 +        BEGIN
 +            VALUE "FileDescription", "Tesseract OCR library"
-+            VALUE "FileVersion", "3, 3, 0, 0"
++            VALUE "FileVersion", "3, 4, 0, 0"
 +            VALUE "InternalName", "libtesseract"
-+            VALUE "LegalCopyright", "Copyright (C) 2012 Google, Inc. Licensed under the Apache License, Version 2.0"
++            VALUE "LegalCopyright", "Copyright (C) 2014 Google, Inc. Licensed under the Apache License, Version 2.0"
 +            VALUE "OriginalFilename", "libtesseract"
 +            VALUE "ProductName", "Tesseract OCR Library"
-+            VALUE "ProductVersion", "3, 3, 0, 0"
++            VALUE "ProductVersion", "3, 4, 0, 0"
 +        END
 +    END
 +    BLOCK "VarFileInfo"
@@ -10161,7 +10071,7 @@ Index: vs2013/libtesseract/resource.h
 @@ -0,0 +1,14 @@
 +//{{NO_DEPENDENCIES}}
 +// Microsoft Visual C++ generated include file.
-+// Used by libtesseract303.rc
++// Used by libtesseract.rc
 +
 +// Next default values for new objects
 +// 
@@ -10234,8 +10144,8 @@ Index: vs2013/port/gettimeofday.h
 +//
 +///////////////////////////////////////////////////////////////////////
 +
-+#ifndef VS2008_PORT_GETTIMEOFDAY_H_
-+#define VS2008_PORT_GETTIMEOFDAY_H_
++#ifndef VS2013_PORT_GETTIMEOFDAY_H_
++#define VS2013_PORT_GETTIMEOFDAY_H_
 +
 +#ifdef _WIN32
 +#include          <winsock.h>    // timeval is defined in here.
@@ -10245,7 +10155,7 @@ Index: vs2013/port/gettimeofday.h
 +
 +int gettimeofday(struct timeval * tp, struct timezone * tzp);
 +
-+#endif  // VS2008_PORT_GETTIMEOFDAY_H_
++#endif  // VS2013_PORT_GETTIMEOFDAY_H_
 Index: vs2013/port/mathfix.h
 ===================================================================
 --- vs2013/port/mathfix.h	(revision 0)
@@ -10287,7 +10197,7 @@ Index: vs2013/port/mathfix.h
 +//#define round(x) roundf(x)
 +//inline float roundf(float num) { return num > 0 ? floorf(num + 0.5f) : ceilf(num - 0.5f); }
 +
-+#endif  // VS2008_INCLUDE_MATHFIXT_H_
++#endif  // VS2013_INCLUDE_MATHFIXT_H_
 Index: vs2013/port/strcasestr.cpp
 ===================================================================
 --- vs2013/port/strcasestr.cpp	(revision 0)
@@ -10411,8 +10321,8 @@ Index: vs2013/port/strcasestr.h
 +http://git.enlightenment.org/legacy/evil.git/tree/src/lib/evil_string.h?id=eeaddf80d0d547d4c216974038c0599b34359695
 +*/
 +
-+#ifndef VS2010_PORT_STRCASESTR_H_
-+#define VS2010_PORT_STRCASESTR_H_
++#ifndef VS2013_PORT_STRCASESTR_H_
++#define VS2013_PORT_STRCASESTR_H_
 +/**
 + * @brief Locatea substring into a string, ignoring case.
 + *
@@ -10431,7 +10341,7 @@ Index: vs2013/port/strcasestr.h
 + */
 +char *strcasestr(const char *haystack, const char *needle);
 +
-+#endif  /* VS2010_PORT_STRCASESTR_H_ */
++#endif  /* VS2013_PORT_STRCASESTR_H_ */
 Index: vs2013/port/strtok_r.cpp
 ===================================================================
 --- vs2013/port/strtok_r.cpp	(revision 0)
@@ -10518,42 +10428,12 @@ Index: vs2013/port/strtok_r.h
 +//
 +///////////////////////////////////////////////////////////////////////
 +
-+#ifndef VS2010_PORT_STRTOK_R_H_
-+#define VS2010_PORT_STRTOK_R_H_
++#ifndef VS2013_PORT_STRTOK_R_H_
++#define VS2013_PORT_STRTOK_R_H_
 +
 +char *strtok_r(char *s1, const char *s2, char **lasts);
 +
-+#endif  // VS2010_PORT_STRCASESTR_H_
-Index: vs2013/port/version.h
-===================================================================
---- vs2013/port/version.h	(revision 0)
-+++ vs2013/port/version.h	(working copy)
-@@ -0,0 +1,25 @@
-+///////////////////////////////////////////////////////////////////////
-+// File:        version.h
-+// Description: define version identifier for Windows
-+// Author:      zdenop@gmail.com
-+// Created:     Fri Nov 19 21:05:06 CET 2010
-+//
-+// (C) Copyright 2010, Google Inc.
-+// Licensed under the Apache License, Version 2.0 (the "License");
-+// you may not use this file except in compliance with the License.
-+// You may obtain a copy of the License at
-+// http://www.apache.org/licenses/LICENSE-2.0
-+// Unless required by applicable law or agreed to in writing, software
-+// distributed under the License is distributed on an "AS IS" BASIS,
-+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+// See the License for the specific language governing permissions and
-+// limitations under the License.
-+//
-+///////////////////////////////////////////////////////////////////////
-+
-+#ifndef           VS2008_PORT_VERSION_H_
-+#define           VS2008_PORT_VERSION_H_
-+
-+#define VERSION "3.03"
-+
-+#endif  // VS2008_PORT_VERSION_H_
++#endif  // VS2013_PORT_STRCASESTR_H_
 Index: vs2013/port/gettimeofday.cpp
 ===================================================================
 --- vs2013/port/gettimeofday.cpp	(revision 0)
@@ -10615,8 +10495,8 @@ Index: vs2013/port/gettimeofday.h
 +//
 +///////////////////////////////////////////////////////////////////////
 +
-+#ifndef VS2008_PORT_GETTIMEOFDAY_H_
-+#define VS2008_PORT_GETTIMEOFDAY_H_
++#ifndef VS2013_PORT_GETTIMEOFDAY_H_
++#define VS2013_PORT_GETTIMEOFDAY_H_
 +
 +#ifdef _WIN32
 +#include          <winsock.h>    // timeval is defined in here.
@@ -10626,7 +10506,7 @@ Index: vs2013/port/gettimeofday.h
 +
 +int gettimeofday(struct timeval * tp, struct timezone * tzp);
 +
-+#endif  // VS2008_PORT_GETTIMEOFDAY_H_
++#endif  // VS2013_PORT_GETTIMEOFDAY_H_
 Index: vs2013/port/mathfix.h
 ===================================================================
 --- vs2013/port/mathfix.h	(revision 0)
@@ -10668,7 +10548,7 @@ Index: vs2013/port/mathfix.h
 +//#define round(x) roundf(x)
 +//inline float roundf(float num) { return num > 0 ? floorf(num + 0.5f) : ceilf(num - 0.5f); }
 +
-+#endif  // VS2008_INCLUDE_MATHFIXT_H_
++#endif  // VS2013_INCLUDE_MATHFIXT_H_
 Index: vs2013/port/strcasestr.cpp
 ===================================================================
 --- vs2013/port/strcasestr.cpp	(revision 0)
@@ -10792,8 +10672,8 @@ Index: vs2013/port/strcasestr.h
 +http://git.enlightenment.org/legacy/evil.git/tree/src/lib/evil_string.h?id=eeaddf80d0d547d4c216974038c0599b34359695
 +*/
 +
-+#ifndef VS2010_PORT_STRCASESTR_H_
-+#define VS2010_PORT_STRCASESTR_H_
++#ifndef VS2013_PORT_STRCASESTR_H_
++#define VS2013_PORT_STRCASESTR_H_
 +/**
 + * @brief Locatea substring into a string, ignoring case.
 + *
@@ -10812,7 +10692,7 @@ Index: vs2013/port/strcasestr.h
 + */
 +char *strcasestr(const char *haystack, const char *needle);
 +
-+#endif  /* VS2010_PORT_STRCASESTR_H_ */
++#endif  /* VS2013_PORT_STRCASESTR_H_ */
 Index: vs2013/port/strtok_r.cpp
 ===================================================================
 --- vs2013/port/strtok_r.cpp	(revision 0)
@@ -10899,42 +10779,12 @@ Index: vs2013/port/strtok_r.h
 +//
 +///////////////////////////////////////////////////////////////////////
 +
-+#ifndef VS2010_PORT_STRTOK_R_H_
-+#define VS2010_PORT_STRTOK_R_H_
++#ifndef VS2013_PORT_STRTOK_R_H_
++#define VS2013_PORT_STRTOK_R_H_
 +
 +char *strtok_r(char *s1, const char *s2, char **lasts);
 +
-+#endif  // VS2010_PORT_STRCASESTR_H_
-Index: vs2013/port/version.h
-===================================================================
---- vs2013/port/version.h	(revision 0)
-+++ vs2013/port/version.h	(working copy)
-@@ -0,0 +1,25 @@
-+///////////////////////////////////////////////////////////////////////
-+// File:        version.h
-+// Description: define version identifier for Windows
-+// Author:      zdenop@gmail.com
-+// Created:     Fri Nov 19 21:05:06 CET 2010
-+//
-+// (C) Copyright 2010, Google Inc.
-+// Licensed under the Apache License, Version 2.0 (the "License");
-+// you may not use this file except in compliance with the License.
-+// You may obtain a copy of the License at
-+// http://www.apache.org/licenses/LICENSE-2.0
-+// Unless required by applicable law or agreed to in writing, software
-+// distributed under the License is distributed on an "AS IS" BASIS,
-+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+// See the License for the specific language governing permissions and
-+// limitations under the License.
-+//
-+///////////////////////////////////////////////////////////////////////
-+
-+#ifndef           VS2008_PORT_VERSION_H_
-+#define           VS2008_PORT_VERSION_H_
-+
-+#define VERSION "3.03"
-+
-+#endif  // VS2008_PORT_VERSION_H_
++#endif  // VS2013_PORT_STRCASESTR_H_
 Index: vs2013/tesseract/resource.h
 ===================================================================
 --- vs2013/tesseract/resource.h	(revision 0)
@@ -11014,8 +10864,8 @@ Index: vs2013/tesseract/tesseract.rc
 +//
 +
 +VS_VERSION_INFO VERSIONINFO
-+ FILEVERSION 3,3,0,0
-+ PRODUCTVERSION 3,3,0,0
++ FILEVERSION 3,4,0,0
++ PRODUCTVERSION 3,4,0,0
 + FILEFLAGSMASK 0x17L
 +#ifdef _DEBUG
 + FILEFLAGS 0x1L
@@ -11031,12 +10881,12 @@ Index: vs2013/tesseract/tesseract.rc
 +        BLOCK "040904b0"
 +        BEGIN
 +            VALUE "FileDescription", "Tesseract command-line OCR engine"
-+            VALUE "FileVersion", "3,3,0,0"
++            VALUE "FileVersion", "3,4,0,0"
 +            VALUE "InternalName", "tesseract"
-+            VALUE "LegalCopyright", "Copyright (C) 2013 Google, Inc. Licensed under the Apache License, Version 2.0"
++            VALUE "LegalCopyright", "Copyright (C) 2014 Google, Inc. Licensed under the Apache License, Version 2.0"
 +            VALUE "OriginalFilename", "tesseract.exe"
 +            VALUE "ProductName", "Tesseract-OCR"
-+            VALUE "ProductVersion", "3.03"
++            VALUE "ProductVersion", "3.04"
 +        END
 +    END
 +    BLOCK "VarFileInfo"
@@ -11590,7 +11440,7 @@ Index: vs2013/tesseract/tesseract.vcxproj
 +      <AdditionalDependencies>ws2_32.lib;user32.lib;liblept$(LIBLEPT_VERSION)d.lib</AdditionalDependencies>
 +      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
 +      <Version>$(LIBLEPT_NUMBER)</Version>
-+      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\..\..\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <SubSystem>Console</SubSystem>
 +      <TargetMachine>MachineX86</TargetMachine>
@@ -11626,7 +11476,7 @@ Index: vs2013/tesseract/tesseract.vcxproj
 +      <AdditionalDependencies>ws2_32.lib;user32.lib;liblept$(LIBLEPT_VERSION)d.lib</AdditionalDependencies>
 +      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
 +      <Version>$(LIBLEPT_NUMBER)</Version>
-+      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\..\..\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <SubSystem>Console</SubSystem>
 +    </Link>
@@ -11699,7 +11549,7 @@ Index: vs2013/tesseract.sln
 +# Visual Studio Express 2013 for Windows Desktop
 +VisualStudioVersion = 12.0.21005.1
 +MinimumVisualStudioVersion = 10.0.40219.1
-+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtesseract303", "libtesseract\libtesseract.vcxproj", "{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}"
++Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtesseract304", "libtesseract\libtesseract.vcxproj", "{D14F28C7-0CAE-4C37-B174-40FDEFBD4FE0}"
 +EndProject
 +Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tesseract", "tesseract\tesseract.vcxproj", "{C76996CB-C4CB-4D89-9F67-F605DF129618}"
 +EndProject
@@ -11841,8 +11691,8 @@ Index: vs2013/tesseract/tesseract.rc
 +//
 +
 +VS_VERSION_INFO VERSIONINFO
-+ FILEVERSION 3,3,0,0
-+ PRODUCTVERSION 3,3,0,0
++ FILEVERSION 3,4,0,0
++ PRODUCTVERSION 3,4,0,0
 + FILEFLAGSMASK 0x17L
 +#ifdef _DEBUG
 + FILEFLAGS 0x1L
@@ -11858,12 +11708,12 @@ Index: vs2013/tesseract/tesseract.rc
 +        BLOCK "040904b0"
 +        BEGIN
 +            VALUE "FileDescription", "Tesseract command-line OCR engine"
-+            VALUE "FileVersion", "3,3,0,0"
++            VALUE "FileVersion", "3,4,0,0"
 +            VALUE "InternalName", "tesseract"
-+            VALUE "LegalCopyright", "Copyright (C) 2013 Google, Inc. Licensed under the Apache License, Version 2.0"
++            VALUE "LegalCopyright", "Copyright (C) 2014 Google, Inc. Licensed under the Apache License, Version 2.0"
 +            VALUE "OriginalFilename", "tesseract.exe"
 +            VALUE "ProductName", "Tesseract-OCR"
-+            VALUE "ProductVersion", "3.03"
++            VALUE "ProductVersion", "3.04"
 +        END
 +    END
 +    BLOCK "VarFileInfo"
@@ -12417,7 +12267,7 @@ Index: vs2013/tesseract/tesseract.vcxproj
 +      <AdditionalDependencies>ws2_32.lib;user32.lib;liblept$(LIBLEPT_VERSION)d.lib</AdditionalDependencies>
 +      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
 +      <Version>$(LIBLEPT_NUMBER)</Version>
-+      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\..\..\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <SubSystem>Console</SubSystem>
 +      <TargetMachine>MachineX86</TargetMachine>
@@ -12453,7 +12303,7 @@ Index: vs2013/tesseract/tesseract.vcxproj
 +      <AdditionalDependencies>ws2_32.lib;user32.lib;liblept$(LIBLEPT_VERSION)d.lib</AdditionalDependencies>
 +      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
 +      <Version>$(LIBLEPT_NUMBER)</Version>
-+      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>..\..\..\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <SubSystem>Console</SubSystem>
 +    </Link>
