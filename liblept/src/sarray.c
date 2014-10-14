@@ -140,9 +140,9 @@
 #endif  /* ! _WIN32 */
 #include "allheaders.h"
 
+static const l_int32  INITIAL_PTR_ARRAYSIZE = 50;     /* n'importe quoi */
 /* MS VC++ can't handle array initialization with static consts ! */
 #define L_BUF_SIZE		512
-#define INITIAL_PTR_ARRAYSIZE 50     /* n'importe quoi */
 
     /* Static function */
 static l_int32 sarrayExtendArray(SARRAY *sa);
@@ -1864,7 +1864,7 @@ SARRAY  *saout;
 SARRAY *
 getFilenamesInDirectory(const char  *dirname)
 {
-char           *name;
+char           *realdir, *name;
 l_int32         len;
 SARRAY         *safiles;
 DIR            *pdir;
@@ -1875,11 +1875,14 @@ struct dirent  *pdirentry;
     if (!dirname)
         return (SARRAY *)ERROR_PTR("dirname not defined", procName, NULL);
 
-    if ((pdir = opendir(dirname)) == NULL)
+    realdir = genPathname(dirname, NULL);
+    pdir = opendir(realdir);
+    FREE(realdir);
+    if (!pdir)
         return (SARRAY *)ERROR_PTR("pdir not opened", procName, NULL);
     if ((safiles = sarrayCreate(0)) == NULL)
         return (SARRAY *)ERROR_PTR("safiles not made", procName, NULL);
-    while ((pdirentry = readdir(pdir)))  {
+    while ((pdirentry = readdir(pdir))) {
 
         /* It's nice to ignore directories.  For this it is necessary to
          * define _BSD_SOURCE in the CC command, because the DT_DIR
@@ -1910,7 +1913,7 @@ SARRAY *
 getFilenamesInDirectory(const char  *dirname)
 {
 char             *pszDir;
-char             *tempname;
+char             *realdir;
 HANDLE            hFind = INVALID_HANDLE_VALUE;
 SARRAY           *safiles;
 WIN32_FIND_DATAA  ffd;
@@ -1920,9 +1923,9 @@ WIN32_FIND_DATAA  ffd;
     if (!dirname)
         return (SARRAY *)ERROR_PTR("dirname not defined", procName, NULL);
 
-    tempname = genPathname(dirname, NULL);
-    pszDir = stringJoin(tempname, "\\*");
-    FREE(tempname);
+    realdir = genPathname(dirname, NULL);
+    pszDir = stringJoin(realdir, "\\*");
+    FREE(realdir);
 
     if (strlen(pszDir) + 1 > MAX_PATH) {
         FREE(pszDir);
@@ -1944,6 +1947,7 @@ WIN32_FIND_DATAA  ffd;
     while (FindNextFileA(hFind, &ffd) != 0) {
         if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)  /* skip dirs */
             continue;
+        convertSepCharsInPath(ffd.cFileName, UNIX_PATH_SEPCHAR);
         sarrayAddString(safiles, ffd.cFileName, L_COPY);
     }
 
