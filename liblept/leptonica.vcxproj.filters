@@ -218,6 +218,12 @@
     <ClCompile Include="src\jbclass.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\jp2kheader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\jp2kheaderstub.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\jp2kio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -278,10 +284,16 @@
     <ClCompile Include="src\partition.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pdfio.c">
+    <ClCompile Include="src\pdfio1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pdfiostub.c">
+    <ClCompile Include="src\pdfio1stub.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pdfio2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pdfio2stub.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pix1.c">
@@ -414,9 +426,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\rotateorth.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\rotateorthlow.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\rotateshear.c">
