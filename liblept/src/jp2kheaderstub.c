@@ -25,76 +25,46 @@
  *====================================================================*/
 
 /*
- *  pnmiostub.c
+ *  jp2kheaderstub.c
  *
- *     Stubs for pnmio.c functions
+ *     Stubs for jp2kheader.c functions
  */
 
 #include "allheaders.h"
 
 /* --------------------------------------------*/
-#if  !USE_PNMIO   /* defined in environ.h */
+#if  !USE_JP2KHEADER   /* defined in environ.h */
 /* --------------------------------------------*/
 
-PIX * pixReadStreamPnm(FILE *fp)
+l_int32 readHeaderJp2k(const char *filename, l_int32 *pw, l_int32 *ph,
+                       l_int32 *pbps, l_int32 *pspp)
 {
-    return (PIX * )ERROR_PTR("function not present", "pixReadStreamPnm", NULL);
+    return ERROR_INT("function not present", "readHeaderJp2k", 1);
 }
 
 /* ----------------------------------------------------------------------*/
 
-l_int32 readHeaderPnm(const char *filename, l_int32 *pw, l_int32 *ph,
-                      l_int32 *pd, l_int32 *ptype, l_int32 *pbps,
-                      l_int32 *pspp)
+l_int32 freadHeaderJp2k(FILE *fp, l_int32 *pw, l_int32 *ph,
+                        l_int32 *pbps, l_int32 *pspp)
 {
-    return ERROR_INT("function not present", "readHeaderPnm", 1);
+    return ERROR_INT("function not present", "freadHeaderJp2k", 1);
 }
 
 /* ----------------------------------------------------------------------*/
 
-l_int32 freadHeaderPnm(FILE *fp, l_int32 *pw, l_int32 *ph, l_int32 *pd,
-                       l_int32 *ptype, l_int32 *pbps, l_int32 *pspp)
+l_int32 readHeaderMemJp2k(const l_uint8 *cdata, size_t size, l_int32 *pw,
+                          l_int32 *ph, l_int32 *pbps, l_int32 *pspp)
 {
-    return ERROR_INT("function not present", "freadHeaderPnm", 1);
+    return ERROR_INT("function not present", "readHeaderMemJp2k", 1);
 }
 
 /* ----------------------------------------------------------------------*/
 
-l_int32 pixWriteStreamPnm(FILE *fp, PIX *pix)
+l_int32 fgetJp2kResolution(FILE *fp, l_int32 *pxres, l_int32 *pyres)
 {
-    return ERROR_INT("function not present", "pixWriteStreamPnm", 1);
-}
-
-/* ----------------------------------------------------------------------*/
-
-l_int32 pixWriteStreamAsciiPnm(FILE *fp, PIX *pix)
-{
-    return ERROR_INT("function not present", "pixWriteStreamAsciiPnm", 1);
-}
-
-/* ----------------------------------------------------------------------*/
-
-PIX * pixReadMemPnm(const l_uint8 *cdata, size_t size)
-{
-    return (PIX * )ERROR_PTR("function not present", "pixReadMemPnm", NULL);
-}
-
-/* ----------------------------------------------------------------------*/
-
-l_int32 readHeaderMemPnm(const l_uint8 *cdata, size_t size, l_int32 *pw,
-                         l_int32 *ph, l_int32 *pd, l_int32 *ptype,
-                         l_int32 *pbps, l_int32 *pspp)
-{
-    return ERROR_INT("function not present", "readHeaderMemPnm", 1);
-}
-
-/* ----------------------------------------------------------------------*/
-
-l_int32 pixWriteMemPnm(l_uint8 **pdata, size_t *psize, PIX *pix)
-{
-    return ERROR_INT("function not present", "pixWriteMemPnm", 1);
+    return ERROR_INT("function not present", "fgetJp2kResolution", 1);
 }
 
 /* --------------------------------------------*/
-#endif  /* !USE_PNMIO */
+#endif  /* !USE_JP2KHEADER */
 /* --------------------------------------------*/
